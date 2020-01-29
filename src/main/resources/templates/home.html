@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+
+<head>
+	<head th:replace="fragment/layout.html :: head"></head>
+	<link rel="stylesheet" href="/css/home.css">
+</head>
+
+<body>
+
+	<header th:replace="fragment/layout.html :: top"></header>
+
+	<section class="secFirst uk-background-image uk-background-cover uk-background-muted uk-flex uk-flex-center uk-flex-middle">
+    	<h1 class="uk-h1 uk-heading-large">Bienvenue au Wild Circus</h1>
+	</section>
+	
+	<section class="secPresentation">
+		
+	</section>
+
+	<footer th:replace="fragment/layout.html :: bottom"></footer>
+
+	<div th:replace="fragment/layout.html :: script"></div>
+
+</body>
+
+</html>

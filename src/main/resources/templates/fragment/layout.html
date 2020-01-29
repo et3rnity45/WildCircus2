@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="fr">
+
+<head th:fragment="head">
+	<!-- Metas -->
+    <meta charset="UTF-8">
+    <meta content="Site du Wild Circus" name="description">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+	<link rel="icon" href="/img/WildCircus.png">
+	<!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway&display=swap">
+    <!-- Animate & AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <!-- Bootstrap & UIkit -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.7/dist/css/uikit.min.css" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/layout.css">
+</head>
+
+<body>
+	<!-- Header -->
+	<header class="uk-offcanvas-content" th:fragment="top">
+	    <nav class="uk-navbar-container uk-light" uk-navbar="mode: click" uk-sticky="animation: uk-animation-slide-top; show-on-up: true">
+	        <div class="uk-navbar-left nav-overlay">
+	            <a class="uk-navbar-item uk-logo" href="/">
+	            <img src="/img/WildCircus.png" alt="Logo Wild Circus" width="64"></a>
+	        </div>
+	        <div class="uk-navbar-left nav-overlay">
+	            <div class="uk-navbar-flip">
+	                <ul class="uk-navbar-nav uk-visible@s">
+	                    <li class="uk-active link-nav"><a href="#">Accueil</a></li>
+	                    <li><a class="link-nav" href="#">Notre spectacle</a></li>
+	                    <li><a class="link-nav" href="#">Représentations</a></li>
+	                    <li><a class="link-nav" href="#">Galerie</a></li>
+	                    <li><a class="link-nav" href="#">Nous Contacter</a></li>
+	                </ul>
+	                <ul class="uk-navbar-nav uk-hidden@s">
+	                    <li><a class="uk-navbar-toggle" uk-navbar-toggle-icon uk-toggle="target: #mobile-navbar"></a></li>
+	                </ul>
+	            </div>
+	        </div>
+	    </nav>
+	    <div id="mobile-navbar" uk-offcanvas="mode: slide; flip: false">
+	        <div class="uk-offcanvas-bar">
+	            <button class="uk-offcanvas-close" type="button" uk-close></button>
+	            <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
+	                <li class="uk-text-center" style="padding: 0 0 25px 0;">
+	                    <a href="/"><img src="/img/WildCircus.png" alt="Logo Wild Circus" width="64"></a>
+	                </li>
+	                <li>
+	                    <hr>
+	                </li>
+	                <li class="uk-text-center">
+	                    <h3>Menu</h3>
+	                </li>
+	                <li class="uk-active link-nav"><a href="#">Accueil</a></li>
+	                <li><a class="link-nav" href="#">Notre spectacle</a></li>
+	                <li><a class="link-nav" href="#">Représentations</a></li>
+	                <li><a class="link-nav" href="#">Galerie</a></li>
+	                <li><a class="link-nav" href="#">Nous Contacter</a></li>
+	            </ul>
+	        </div>
+	    </div>
+	</header>
+	
+	
+	<!-- Footer -->
+	<footer th:fragment="bottom">
+	
+	</footer>
+	
+	
+	<!-- Scriptsx -->
+	<div th:fragment="script">
+		<script src="https://cdn.jsdelivr.net/npm/uikit@3.2.7/dist/js/uikit.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/uikit@3.2.7/dist/js/uikit-icons.min.js"></script>
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    	<script>
+			AOS.init({
+		    	once: true
+		    })
+		</script>
+	</div>
+	
+</body>
+
+</html>
