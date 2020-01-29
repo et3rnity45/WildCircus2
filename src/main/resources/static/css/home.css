@@ -1,4 +1,53 @@
 .secFirst {
 	height: 95vh;
-	background-image: url("/img/circus-edited.jpg");
+	background-image: url("/img/backgrounds/circus-edited.jpg");
+}
+
+.img-accueil {
+	max-height: 550px;
+}
+
+h2:after {
+	content: "";
+	width: 12rem;
+	height: 6px;
+	background-color: #E0A526;
+	display: block;
+	margin: 1rem auto;
+	border-radius: 20px;
+}
+
+hr {
+	width: 60%;
+}
+
+.secContact {
+	background-image: url("/img/backgrounds/circus-bg.jpg")
+}
+
+.formButton {
+	background-color: rgba(0,0,0,0.8);
+	padding: 30px;
+	border: solid 1px #E0A526;
+	border-radius: 20px;
+}
+
+.uk-legend, .uk-form-label {
+	color: #fff;
+}
+
+button {
+	background-color: #E0A526;
+}
+
+button:hover {
+	background-color: #E0A526;
+}
+
+@media only screen and (max-width: 1000px) {
+	
+	.secFirst {
+		height: 50vh;
+	}
+	
 }

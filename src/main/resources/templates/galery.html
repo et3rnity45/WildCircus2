@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+
+<head>
+	<head th:replace="fragment/layout.html :: head"></head>
+	<link rel="stylesheet" href="/css/galery.css">
+</head>
+
+	<header th:replace="fragment/layout.html :: top"></header>
+	
+	<section class="secGalery uk-section uk-section-secondary">
+		<div class="uk-container uk-container-large">
+			<div uk-grid="masonry: true">
+				<img th:each="picture : ${pictures}" th:src="${picture.picturePath}" th:alt="${picture.title}"/>
+			</div>
+		</div>
+	</section>
+	
+	<footer th:replace="fragment/layout.html :: bottom"></footer>
+
+	<div th:replace="fragment/layout.html :: script"></div>
+
+</body>
+
+</html>

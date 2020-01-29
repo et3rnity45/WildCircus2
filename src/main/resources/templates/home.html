@@ -10,16 +10,82 @@
 
 	<header th:replace="fragment/layout.html :: top"></header>
 
-	<section class="secFirst uk-background-image uk-background-cover uk-background-muted uk-flex uk-flex-center uk-flex-middle">
+	<section class="secFirst uk-background-image uk-background-cover uk-background-muted uk-flex uk-flex-center uk-flex-middle uk-overflow-hidden">
     	<h1 class="uk-h1 uk-heading-large">Bienvenue au Wild Circus</h1>
 	</section>
 	
-	<section class="secPresentation">
-		
+	<section id="secPresentation" class="secPresentation uk-section uk-section-secondary">
+		<div class="uk-container uk-container-large">
+			<div class="uk-flex uk-flex-center uk-margin-large">
+				<h2 class="uk-h2 uk-heading-small">Venez découvrir notre spectale</h2>
+			</div>
+			<div class="uk-margin-large" uk-grid>
+				<div class="uk-width-expand">
+					<h3 th:text="${presentations[0].title}">Titre 1</h3>
+					<hr/>
+					<p class="uk-margin-medium-top" th:text="${presentations[0].content}">Lorem ipsum dolor sit amet</p>
+				</div>
+				<div>
+					<img class="img-accueil" th:src="${presentations[0].picturePath}" th:alt="|Visuel ${presentations[0].title}|" uk-img/>
+				</div>
+			</div>
+			<div class="uk-margin-large" uk-grid>
+				<div>
+					<img class="img-accueil" th:src="${presentations[1].picturePath}" th:alt="|Visuel ${presentations[1].title}|" uk-img/>
+				</div>
+				<div class="uk-width-expand">
+					<h3 th:text="${presentations[1].title}">Titre 2</h3>
+					<hr/>
+					<p class="uk-margin-medium-top" th:text="${presentations[1].content}">Lorem ipsum dolor sit amet</p>
+				</div>
+			</div>
+			<div class="uk-margin-large" uk-grid>
+				<div class="uk-width-expand">
+					<h3 th:text="${presentations[2].title}">Titre 3</h3>
+					<hr/>
+					<p class="uk-margin-medium-top" th:text="${presentations[2].content}">Lorem ipsum dolor sit amet</p>
+				</div>
+				<div>
+					<img class="img-accueil" th:src="${presentations[2].picturePath}" th:alt="|Visuel ${presentations[2].title}|" uk-img/>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section id="secContact" class="secContact uk-background-image uk-background-fixed uk-background-cover uk-background-muted uk-overflow-hidden">
+		<div class="uk-container uk-container-small uk-margin-large-top">
+			<div class="formButton">
+				<form id="contact" method="post" th:action="@{/}" th:object="${message}">
+					<fieldset>
+						<legend class="uk-legend">Nous Contacter</legend>
+						<div class="uk-margin">
+							<label class="uk-form-label" for="fullname">Nom complet</label>
+				            <input class="uk-input" type="text" id="fullname" placeholder="Sylvain Blondeau" name="fullname" th:field="*{fullname}">
+				            <span class="uk-alert-warning" uk-alert th:if="${#fields.hasErrors('fullname')}" th:errors="*{fullname}"></span>
+				        </div>
+				        <div class="uk-margin">
+							<label class="uk-form-label" for="email">Email</label>
+				            <input class="uk-input" type="email" id="email" placeholder="xyz@gmail.com" name="email" th:field="*{email}">
+				            <span class="uk-alert-warning" uk-alert th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+				        </div>
+				        <div class="uk-margin">
+				        	<label class="uk-form-label" for="content">Message</label>
+				            <textarea class="uk-textarea" id="content" rows="10" placeholder="Votre message ..." name="content" th:field="*{content}"></textarea>
+				            <span class="uk-alert-warning" uk-alert th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></span>
+				        </div>
+					</fieldset>
+				</form>
+				<div class="uk-flex uk-flex-right">
+					<button type="submit" form="contact" class="uk-button">Envoyer</button>
+				</div>
+			</div>
+		</div>
 	</section>
 
 	<footer th:replace="fragment/layout.html :: bottom"></footer>
 
+	<div th:replace="fragment/layout.html :: toasts"></div>
+	
 	<div th:replace="fragment/layout.html :: script"></div>
 
 </body>

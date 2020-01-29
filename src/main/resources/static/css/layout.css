@@ -4,6 +4,7 @@
     padding: 0;
     font-family: 'Raleway', sans-serif !important;
 	word-wrap: break-word;
+	line-height: 1.5rem;
 }
 
 html {
@@ -81,4 +82,17 @@ h6, .uk-h6 {font-size: @base-h6-font-size;}
 	opacity: 1;
 	-webkit-transform: scaleX(1);
 	transform: scaleX(1);
+}
+
+/*** TOASTS ***/
+
+.alerts {
+	margin: 10px;
+	position: fixed;
+	top: 0;
+	right: 0;
+}
+
+.uk-alert-warning {
+	background-color: transparent;
 }

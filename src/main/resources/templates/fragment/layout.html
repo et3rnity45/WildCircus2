@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta content="Site du Wild Circus" name="description">
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-	<link rel="icon" href="/img/WildCircus.png">
+	<link rel="icon" href="/img/logo/WildCircus.png">
 	<!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway&display=swap">
@@ -28,16 +28,16 @@
 	    <nav class="uk-navbar-container uk-light" uk-navbar="mode: click" uk-sticky="animation: uk-animation-slide-top; show-on-up: true">
 	        <div class="uk-navbar-left nav-overlay">
 	            <a class="uk-navbar-item uk-logo" href="/">
-	            <img src="/img/WildCircus.png" alt="Logo Wild Circus" width="64"></a>
+	            <img src="/img/logo/WildCircus.png" alt="Logo Wild Circus" width="64"></a>
 	        </div>
 	        <div class="uk-navbar-left nav-overlay">
 	            <div class="uk-navbar-flip">
 	                <ul class="uk-navbar-nav uk-visible@s">
-	                    <li class="uk-active link-nav"><a href="#">Accueil</a></li>
-	                    <li><a class="link-nav" href="#">Notre spectacle</a></li>
-	                    <li><a class="link-nav" href="#">Représentations</a></li>
-	                    <li><a class="link-nav" href="#">Galerie</a></li>
-	                    <li><a class="link-nav" href="#">Nous Contacter</a></li>
+	                    <li class="uk-active link-nav"><a href="/">Accueil</a></li>
+	                    <li><a class="link-nav" href="/#secPresentation">Notre spectacle</a></li>
+	                    <li><a class="link-nav" href="/representation">Représentations</a></li>
+	                    <li><a class="link-nav" href="/galery">Galerie</a></li>
+	                    <li><a class="link-nav" href="/#secContact">Nous Contacter</a></li>
 	                </ul>
 	                <ul class="uk-navbar-nav uk-hidden@s">
 	                    <li><a class="uk-navbar-toggle" uk-navbar-toggle-icon uk-toggle="target: #mobile-navbar"></a></li>
@@ -50,7 +50,7 @@
 	            <button class="uk-offcanvas-close" type="button" uk-close></button>
 	            <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
 	                <li class="uk-text-center" style="padding: 0 0 25px 0;">
-	                    <a href="/"><img src="/img/WildCircus.png" alt="Logo Wild Circus" width="64"></a>
+	                    <a href="/"><img src="/img/logo/WildCircus.png" alt="Logo Wild Circus" width="64"></a>
 	                </li>
 	                <li>
 	                    <hr>
@@ -58,20 +58,33 @@
 	                <li class="uk-text-center">
 	                    <h3>Menu</h3>
 	                </li>
-	                <li class="uk-active link-nav"><a href="#">Accueil</a></li>
-	                <li><a class="link-nav" href="#">Notre spectacle</a></li>
-	                <li><a class="link-nav" href="#">Représentations</a></li>
-	                <li><a class="link-nav" href="#">Galerie</a></li>
-	                <li><a class="link-nav" href="#">Nous Contacter</a></li>
+	                <li class="uk-active link-nav"><a href="/">Accueil</a></li>
+	                <li><a class="link-nav" href="/#secPresentation">Notre spectacle</a></li>
+	                <li><a class="link-nav" href="/representation">Représentations</a></li>
+	                <li><a class="link-nav" href="/galery">Galerie</a></li>
+	                <li><a class="link-nav" href="/#secContact">Nous Contacter</a></li>
 	            </ul>
 	        </div>
 	    </div>
 	</header>
 	
 	
+	<!-- Toasts -->
+	<div class="alerts" th:fragment="toasts" th:if="${successMessage} or ${errorMessage}">
+		<div class="uk-alert-success" uk-alert th:if="${successMessage}">
+		    <a class="uk-alert-close" uk-close></a>
+		    <p th:text="${successMessage}">Message de succès</p>
+		</div>
+		
+		<div class="uk-alert-warning" uk-alert th:if="${errorMessage}">
+		    <a class="uk-alert-close" uk-close></a>
+		    <p th:text="${errorMessage}">Message d'erreur</p>
+		</div>
+	</div>
+	
+	
 	<!-- Footer -->
 	<footer th:fragment="bottom">
-	
 	</footer>
 	
 	
