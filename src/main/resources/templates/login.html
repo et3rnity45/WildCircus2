@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+
+<head>
+	<head th:replace="fragment/layout.html :: head"></head>
+	<link rel="stylesheet" href="/css/login.css">
+</head>
+
+<body>
+	<header th:replace="fragment/layout.html :: top"></header>
+	
+	<section class="uk-section uk-section-secondary uk-section-muted uk-flex uk-flex-middle" uk-height-viewport>
+		<div class="uk-width-1-1">
+			<div class="uk-container">
+				<div class="uk-grid-margin uk-grid uk-grid-stack" uk-grid>
+					<div class="uk-width-1-1@m">
+						<div class="uk-margin uk-width-large uk-margin-auto uk-card uk-card-secondary uk-card-body uk-box-shadow-large uk-animation-slide-bottom">
+							<h3 class="uk-card-title uk-text-center">Se connecter</h3>
+							<form th:action="@{/login}" method="post">
+								<div class="uk-margin">
+									<div class="uk-inline uk-width-1-1">
+										<span class="uk-form-icon" uk-icon="icon: user"></span>
+										<input class="uk-input uk-form-large" type="text" name="username">
+									</div>
+								</div>
+								<div class="uk-margin">
+									<div class="uk-inline uk-width-1-1">
+										<span class="uk-form-icon" uk-icon="icon: lock"></span>
+										<input class="uk-input uk-form-large" type="password" name="password">	
+									</div>
+								</div>
+								<div class="uk-margin">
+									<button class="uk-button uk-button-default uk-button-large uk-width-1-1">Connexion</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<footer th:replace="fragment/layout.html :: bottom"></footer>
+	
+	<div th:replace="fragment/layout.html :: toasts"></div>
+
+	<div th:replace="fragment/layout.html :: script"></div>
+	
+</body>
+
+</html>

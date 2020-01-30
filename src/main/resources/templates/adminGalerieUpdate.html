@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+
+<head>
+	<head th:replace="fragment/adminlayout.html :: head"></head>
+	<link rel="stylesheet" href="/css/admin.css">
+</head>
+
+<body>
+
+	<div th:replace="fragment/adminlayout.html :: sidebar"></div>
+	
+	<section class="uk-section uk-section-secondary">
+		<div class="uk-container">
+			<h1>Ajouter des images</h1>
+			<hr class="uk-divider-icon uk-margin-medium">
+			<form method="post" th:action="@{/admin/galery/update}" enctype="multipart/form-data">
+			    <div class="uk-margin" uk-margin>
+			        <div uk-form-custom="target: true">
+			            <input type="file" multiple name="pictures" required>
+			            <input class="uk-input uk-form-width-large" type="text" placeholder="Sélectionnez des fichiers" disabled>
+			        </div>
+			        <button class="uk-button uk-button-default">Envoyer</button>
+			    </div>
+			</form>
+		</div>
+	</section>
+	<div th:replace="fragment/layout.html :: script"></div>
+</body>
+
+</html>

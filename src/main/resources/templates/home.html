@@ -3,6 +3,7 @@
 
 <head>
 	<head th:replace="fragment/layout.html :: head"></head>
+	<title>Wild Circus | Accueil</title>
 	<link rel="stylesheet" href="/css/home.css">
 </head>
 
@@ -52,10 +53,10 @@
 		</div>
 	</section>
 	
-	<section id="secContact" class="secContact uk-background-image uk-background-fixed uk-background-cover uk-background-muted uk-overflow-hidden">
+	<section id="secContact" class="secContact uk-section uk-section-secondary uk-background-image uk-background-fixed uk-background-cover uk-background-muted uk-overflow-hidden">
 		<div class="uk-container uk-container-small uk-margin-large-top">
 			<div class="formButton">
-				<form id="contact" method="post" th:action="@{/}" th:object="${message}">
+				<form id="contact" method="post" th:action="@{/#secContact}" th:object="${message}">
 					<fieldset>
 						<legend class="uk-legend">Nous Contacter</legend>
 						<div class="uk-margin">

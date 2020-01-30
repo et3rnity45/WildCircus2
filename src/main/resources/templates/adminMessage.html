@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+
+<head>
+	<head th:replace="fragment/adminlayout.html :: head"></head>
+	<link rel="stylesheet" href="/css/adminTable.css">
+</head>
+
+<body>
+
+	<div th:replace="fragment/adminlayout.html :: sidebar"></div>
+	
+	<section class="uk-section uk-section-secondary">
+		<div class="uk-container uk-container-large">
+			<table class="uk-table uk-table-middle uk-table-divider">
+			    <thead>
+			        <tr>
+			            <th class="uk-width-small">Nom complet</th>
+			            <th>Date</th>
+			            <th>Email</th>
+			            <th>Message</th>
+			        </tr>
+			    </thead>
+			    <tbody>
+			        <tr th:each="message : ${messages}">
+			            <td th:text="${message.fullname}">John Doe</td>
+			            <td th:text="${#dates.format(message.date, 'dd MMM yyyy')}">29 Jan. 2020</td>
+			            <td th:text="${message.email}">xyz@gmail.com</td>
+			            <td th:text="${message.content}">Lorem Ipsum Dolor Sit Amet</td>
+			            <td><a th:href="|/admin/message/delete${message.id}|"><button class="uk-button uk-button-default" type="button" onclick="return confirm('Supprimer ce message ?')">Supprimer</button></a></td>
+			        </tr>
+			    </tbody>
+			</table>
+		</div>
+	</section>
+	
+	<div th:replace="fragment/layout.html :: script"></div>
+	
+</body>
+
+</html>

@@ -16,9 +16,7 @@ public class Galery {
 	
 	public Galery() {}
 	
-	public Galery(Integer id, String title, String picturePath) {
-		super();
-		this.id = id;
+	public Galery(String title, String picturePath) {
 		this.title = title;
 		this.picturePath = picturePath;
 	}

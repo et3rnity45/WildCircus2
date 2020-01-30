@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+
+<head>
+	<head th:replace="fragment/adminlayout.html :: head"></head>
+	<link rel="stylesheet" href="/css/adminTable.css">
+	<style>img {max-width: 200px;max-height: 200px;}</style>
+</head>
+
+<body>
+
+	<div th:replace="fragment/adminlayout.html :: sidebar"></div>
+	
+	<section class="uk-section uk-section-secondary">
+		<div class="uk-container uk-container-large">
+			<div>
+				<h1>Gestion des représentations</h1>
+				<a href="/admin/representation/update"><span uk-icon="icon: plus"></span> Ajouter une représentation</a>
+			</div>
+			<hr class="uk-divider-icon uk-margin-medium">
+			<table class="uk-table uk-table-middle uk-table-divider">
+			    <thead>
+			        <tr>
+			            <th class="uk-width-small">Titre</th>
+			            <th>Description</th>
+			            <th>Image</th>
+			            <th>Date</th>
+			            <th>Places</th>
+			        </tr>
+			    </thead>
+			    <tbody>
+			        <tr th:each="representation : ${representations}">
+			            <td th:text="${representation.title}">Titre</td>
+			            <td th:text="${representation.description}">Lorem Ipsum Dolor Sit Amet</td>
+			            <td><img th:src="${representation.picturePath}" alt="Visuel représentation" /></td>
+			            <td th:text="${#dates.format(representation.date, 'dd MMM. yyyy')}">30 Jan. 2020</td>
+			            <td th:text="${representation.places}"></td>
+			            <td><a th:href="@{/admin/representation/update(id=${representation.id})}"><button class="uk-button uk-button-default" type="button">Modifier</button></a></td>
+			        </tr>
+			    </tbody>
+			</table>
+		</div>
+	</section>
+	
+	<div th:replace="fragment/layout.html :: script"></div>
+	
+</body>
+
+</html>

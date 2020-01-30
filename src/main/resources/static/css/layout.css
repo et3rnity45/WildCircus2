@@ -7,13 +7,12 @@
 	line-height: 1.5rem;
 }
 
-html {
-	scroll-behavior: smooth;
+body {
+	background-color: #1C1C1C;
 }
 
-@font-face {
-	font-family: Potra;
-	src: url("/font/Potra.ttf");
+html {
+	scroll-behavior: smooth;
 }
 
 /****** GLOBAL STYLE *****/
@@ -24,8 +23,12 @@ a, a:hover {
 }
 
 h1 {
-	color: #E0A526 !important;
-	font-family: Potra !important;
+	color: #fff !important;
+	font-family: 'Kaushan Script', cursive !important;
+}
+
+h2 {
+	font-family: 'Kaushan Script', cursive !important;
 }
 
 h1, .uk-h1 {font-size: @base-h1-font-size*0.8;}
@@ -89,10 +92,6 @@ h6, .uk-h6 {font-size: @base-h6-font-size;}
 .alerts {
 	margin: 10px;
 	position: fixed;
-	top: 0;
+	top: 80px;
 	right: 0;
-}
-
-.uk-alert-warning {
-	background-color: transparent;
 }

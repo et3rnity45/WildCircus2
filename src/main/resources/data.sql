@@ -1,5 +1,5 @@
 INSERT INTO `user` VALUES
-(1, 'admin@gmail.com', '', 'ADMIN', 'et3rnity45');
+(1, 'admin@gmail.com', '$2a$10$KMlIdTThJPcd5chekN60TuWOs2EQWUsAkHO/DDKUAi8Y.G0fkm7hm', 'ADMIN', 'admin');
 
 INSERT INTO `presentation` VALUES
 (1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tellus massa, laoreet feugiat mauris consequat, fringilla consectetur massa. Aenean eu dapibus sem, id volutpat nibh. Nam in mauris nec purus imperdiet laoreet. Curabitur sed molestie sem. Donec vel tellus eu metus consequat molestie ut in leo. Donec lorem augue, rutrum vel tellus nec, posuere ultrices turpis. Phasellus nulla nunc, ornare eget consectetur eget, euismod vitae orci. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris malesuada mauris eget eleifend semper. Curabitur lobortis, risus in laoreet fringilla, odio ante placerat nunc, ut sagittis felis neque ut tellus. Aliquam tempus dui eu erat lacinia, dapibus ultrices ligula mattis. Nulla facilisi. Duis sed massa feugiat, tristique velit quis, lacinia enim. Donec dui orci, varius porta tincidunt a, ullamcorper vitae magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.', '/img/presentationPicture/picture1.webp', 'Titre premier'),
@@ -18,3 +18,15 @@ INSERT INTO `galery` VALUES
 (9, '/img/galery/galery9.jpg', 'Image 9'),
 (10, '/img/galery/galery10.jpg', 'Image 10'),
 (11, '/img/galery/galery11.jpg', 'Image 11');
+
+INSERT INTO `message` VALUES
+(1, 'Exemple de message', '2020-01-23 17:08:55', 'xyz@gmail.com', 'Quentin Liger'),
+(2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tellus massa, laoreet feugiat mauris consequat.', '2020-01-06 07:54:24', 'exemple@gmail.com', 'Eleou Jeanne');
+
+INSERT INTO `representation` VALUES
+(1,'2020-02-24 21:00:00','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tellus massa, laoreet feugiat mauris consequat.','/img/shows/show_first.jpg',120,'Spectacle acrobates'),
+(2,'2020-02-06 20:00:00','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tellus massa, laoreet feugiat mauris consequat.','/img/shows/show_second.jpg',1,'Show mensuel'),
+(3,'2020-01-25 20:30:00','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tellus massa, laoreet feugiat mauris consequat.','/img/shows/show_third.jpg',60,'Spectacle de lions'),
+(4,'2020-02-25 19:30:00','Suspendisse potenti. Nullam ac eros nec risus mollis tincidunt sollicitudin at est. Cras venenatis dapibus sem et varius. Etiam finibus aliquet magna, ut commodo turpis blandit convallis. Nam condimentum sit amet dolor in ultrices. Nam volutpat viverra justo eu varius. Curabitur quis bibendum tellus.','/img/shows/les_wilders.webp',25,'Les Wilders'),
+(5,'2020-02-20 14:00:00','Suspendisse potenti. Nullam ac eros nec risus mollis tincidunt sollicitudin at est. Cras venenatis dapibus sem et varius. Etiam finibus aliquet magna, ut commodo turpis blandit convallis. Nam condimentum sit amet dolor in ultrices. Nam volutpat viverra justo eu varius. Curabitur quis bibendum tellus.','/img/shows/la_vie_du_cirque.jpg',120,'La vie du cirque'),
+(6,'2020-02-22 23:00:00','Nam sollicitudin est nisi, eget dapibus enim aliquam at. Fusce placerat posuere finibus. Quisque maximus porttitor arcu non pulvinar. Donec at diam quis felis feugiat volutpat. Donec eu risus id ligula ullamcorper gravida.','/img/shows/spectacle_nocture.jpg',80,'Spectacle nocture');

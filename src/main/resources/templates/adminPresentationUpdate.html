@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+
+<head>
+	<head th:replace="fragment/adminlayout.html :: head"></head>
+	<link rel="stylesheet" href="/css/admin.css">
+</head>
+
+<body>
+
+	<div th:replace="fragment/adminlayout.html :: sidebar"></div>
+	
+	<section class="uk-section uk-section-secondary">
+		<div class="uk-container uk-container-large">
+			<h1>Modifier le paragraphe</h1>
+			<hr class="uk-divider-icon uk-margin-medium">
+			<form class="uk-form-stacked" method="post" th:action="@{/admin/presentation/update}" th:object="${presentation}" enctype="multipart/form-data">
+				<input name="id" th:field="*{id}" type="hidden">
+			    <fieldset class="uk-fieldset">
+			    	<div class="uk-margin">
+			    		<label class="uk-form-label" for="title">Titre</label>
+			            <input class="uk-input uk-form-width-large" type="text" id="title" name="title" th:field="*{title}" placeholder="Titre">
+			        </div>
+			    	<div class="uk-margin" uk-margin>
+				        <div uk-form-custom="target: true">
+				        	<label class="uk-form-label" for="picture">Image <span uk-icon="icon: cloud-upload"></span></label>
+				            <input type="file" name="imageFile" id="picture">
+				            <input class="uk-input uk-form-width-large" type="text" placeholder="Sélectionnez un fichier" disabled>
+				        </div>
+				    </div>
+				    <div class="uk-margin">
+				    	<label class="uk-form-label" for="content">Contenu</label>
+			            <textarea class="uk-textarea" rows="10" id="content" th:field="*{content}" placeholder="Contenu"></textarea>
+			        </div>
+			        <button class="uk-button uk-button-default">Envoyer</button>
+			    </fieldset>
+			</form>
+		</div>
+	</section>
+	
+	<div th:replace="fragment/layout.html :: script"></div>
+	
+</body>
+
+</html>

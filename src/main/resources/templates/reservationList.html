@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+
+<head>
+	<head th:replace="fragment/adminlayout.html :: head"></head>
+	<link rel="stylesheet" href="/css/adminTable.css">
+</head>
+
+<body>
+
+	<div th:replace="fragment/adminlayout.html :: sidebar"></div>
+	
+	<section class="uk-section uk-section-secondary">
+		<div class="uk-container uk-container-large">
+			<div>
+				<h1>Réservations du spectacle : <span th:text="${representation.title}"></span></h1>
+			</div>
+			<hr class="uk-divider-icon uk-margin-medium">
+			<table class="uk-table uk-table-middle uk-table-divider">
+			    <thead>
+			        <tr>
+			            <th class="uk-width-small">Nom complet</th>
+			            <th>Email</th>
+			            <th>Places adultes</th>
+			            <th>Places enfants</th>
+			            <th>Places etudiants</th>
+			            <th>Places scolaires</th>
+			        </tr>
+			    </thead>
+			    <tbody>
+			        <tr th:each="reservation : ${reservations}">
+			            <td th:text="${reservation.fullname}">John Doe</td>
+			            <td th:text="${reservation.email}">exemple@gmail.com</td>
+			            <td th:text="${reservation.adultPlaces}">0</td>
+			            <td th:text="${reservation.childPlaces}">0</td>
+			            <td th:text="${reservation.etudiantPlaces}">0</td>
+			            <td th:text="${reservation.schoolPlaces}">0</td>
+			        </tr>
+			    </tbody>
+			</table>
+		</div>
+	</section>
+	
+	<div th:replace="fragment/layout.html :: script"></div>
+	
+</body>
+
+</html>

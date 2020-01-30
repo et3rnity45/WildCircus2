@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+
+<head>
+	<head th:replace="fragment/layout.html :: head"></head>
+	<title>Wild Circus | Représentations</title>
+	<link rel="stylesheet" href="/css/representation.css">
+</head>
+
+	<header th:replace="fragment/layout.html :: top"></header>
+	
+	<section class="uk-section uk-section-secondary">
+		<div class="uk-container uk-container-large">
+			<a class="uk-button uk-button-default" href="#modal-center" uk-toggle>Grille des Tarifs</a>
+			<div class="uk-align-center" uk-filter="target: .js-filter">
+			    <div class="uk-grid-small uk-grid-divider uk-flex-middle" uk-grid>
+			    	<p>Trier par</p>
+			        <div class="uk-width-auto uk-text-nowrap">
+			        	<span>Places</span>
+			            <span class="uk-active" uk-filter-control="sort: data-name"><a class="uk-icon-link" href="#" uk-icon="icon: arrow-down"></a></span>
+			            <span uk-filter-control="sort: data-name; order: desc"><a class="uk-icon-link" href="#" uk-icon="icon: arrow-up"></a></span>
+			        </div>
+			        <div class="uk-width-auto uk-text-nowrap">
+			        	<span>Date</span>
+			            <span class="uk-active" uk-filter-control="sort: data-date"><a class="uk-icon-link" href="#" uk-icon="icon: arrow-down"></a></span>
+			            <span uk-filter-control="sort: data-date; order: desc"><a class="uk-icon-link" href="#" uk-icon="icon: arrow-up"></a></span>
+			        </div>
+			    </div>
+				<ul class="js-filter uk-flex uk-flex-column uk-flex-center uk-overflow-hidden" uk-grid>
+			        <li th:each="representation, iter : ${representations}" th:data-name="${representation.places}" th:data-date="${#dates.format(representation.date, 'yyyy-MM-dd')}">
+			            <div class="uk-card uk-card-secondary uk-margin-large uk-grid-collapse uk-child-width-1-2@s" uk-grid>
+						    <div th:class="${iter.index % 2 == 1} ? 'uk-card-media-left uk-cover-container' : 'uk-flex-last@s uk-card-media-right uk-cover-container'">
+						        <img th:src="${representation.picturePath}" th:alt="|Representation ${representation.title}|" uk-cover>
+						        <canvas width="600" height="400"></canvas>
+						    </div>
+						    <div>
+						        <div class="uk-card-body">
+						            <h3 class="uk-card-title" th:text="${representation.title}">Titre</h3>
+						            <span th:text="${#dates.format(representation.date, 'dd MMM. yyyy')}">25 Jan 2020</span>
+						            <p th:text="${representation.description}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+						        </div>
+						       	<div class="uk-card-footer">
+							        <p th:if="${representation.places > 0}" class="uk-align-left"><span class="uk-label" th:text="${representation.places}">0</span> places restantes</p>
+							         <p th:unless="${representation.places > 0}" class="uk-align-left">Représentation complète</p>
+							        <a th:if="${representation.places > 0}" th:href="@{|/representation/${representation.id}/inscription|}" class="uk-button uk-button-text uk-align-right">S'inscrire</a>
+							    </div>
+						    </div>
+						</div>
+			        </li>
+			    </ul>
+			</div>
+		</div>
+	</section>
+	
+	<!-- Modale Tarifs -->
+	<div id="modal-center" class="uk-flex-top" uk-modal>
+	    <div class="uk-modal-dialog uk-margin-auto-vertical">
+	    	<button class="uk-modal-close-secondary" type="button" uk-close></button>
+	        <div class="uk-modal-header uk-background-secondary">
+	            <h2 class="uk-modal-title">Nos Tarifs</h2>
+	        </div>
+	        <div class="uk-modal-body uk-background-secondary">
+	            <table class="uk-table uk-table-justify uk-table-divider">
+				    <thead>
+				        <tr>
+				            <th>Jour</th>
+				            <th>Enfant</th>
+				            <th>Adulte</th>
+				            <th>Etudiant</th>
+				            <th>Scolaire</th>
+				        </tr>
+				    </thead>
+				    <tbody>
+				        <tr>
+				            <td>Lundi au Vendredi</td>
+				            <td>20</td>
+				            <td>35</td>
+				            <td>25</td>
+				            <td>15</td>
+				        </tr>
+				        <tr>
+				            <td>Week-end</td>
+				            <td>25</td>
+				            <td>40</td>
+				            <td>30</td>
+				            <td>15</td>
+				        </tr>
+				    </tbody>
+				</table>
+	        </div>
+	    </div>
+	</div>
+	
+	<footer th:replace="fragment/layout.html :: bottom"></footer>
+	
+	<div th:replace="fragment/layout.html :: toasts"></div>
+
+	<div th:replace="fragment/layout.html :: script"></div>
+
+</body>
+
+</html>

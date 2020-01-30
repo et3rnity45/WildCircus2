@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+
+<head>
+	<head th:replace="fragment/adminlayout.html :: head"></head>
+	<link rel="stylesheet" href="/css/adminTable.css">
+</head>
+
+<body>
+
+	<div th:replace="fragment/adminlayout.html :: sidebar"></div>
+	
+	<section class="uk-section uk-section-secondary">
+		<div class="uk-container uk-container-large">
+			<div>
+				<h1>Gestion des paragraphes de présentation</h1>
+			</div>
+			<hr class="uk-divider-icon uk-margin-medium">
+			<table class="uk-table uk-table-middle uk-table-divider">
+			    <thead>
+			        <tr>
+			            <th class="uk-width-small">Titre</th>
+			            <th>Contenu</th>
+			            <th>Image</th>
+			        </tr>
+			    </thead>
+			    <tbody>
+			        <tr th:each="presentation : ${presentations}">
+			            <td th:text="${presentation.title}">Titre</td>
+			            <td th:text="${presentation.content}">Lorem Ipsum Dolor Sit Amet</td>
+			            <td><img th:src="${presentation.picturePath}" alt="Visuel paragraphe" /></td>
+			            <td><a th:href="@{/admin/presentation/update(id=${presentation.id})}"><button class="uk-button uk-button-default" type="button">Modifier</button></a></td>
+			        </tr>
+			    </tbody>
+			</table>
+		</div>
+	</section>
+	
+	<div th:replace="fragment/layout.html :: script"></div>
+	
+</body>
+
+</html>

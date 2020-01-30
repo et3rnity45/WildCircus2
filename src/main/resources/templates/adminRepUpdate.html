@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+
+<head>
+	<head th:replace="fragment/adminlayout.html :: head"></head>
+	<link rel="stylesheet" href="/css/adminTable.css">
+</head>
+
+<body>
+
+	<div th:replace="fragment/adminlayout.html :: sidebar"></div>
+	
+	<section class="uk-section uk-section-secondary">
+		<div class="uk-container uk-container-large">
+			<h1 th:text="${representation.id} ? 'Modifier la représentation' : 'Ajouter une représentation'">Gérer la représentation</h1>
+			<hr class="uk-divider-icon uk-margin-medium">
+			<form class="uk-form-stacked" method="post" th:action="@{/admin/representation/update}" th:object="${representation}" enctype="multipart/form-data">
+				<input name="id" th:field="*{id}" type="hidden">
+			    <fieldset class="uk-fieldset">
+			    	<div class="uk-child-width-1-3@s" uk-grid>
+				    	<div>
+				    		<label class="uk-form-label" for="title">Titre *</label>
+				            <input class="uk-input" type="text" id="title" name="title" th:field="*{title}" placeholder="Titre" required>
+				        </div>
+				        <div>
+				    		<label class="uk-form-label" for="places">Places *</label>
+				            <input class="uk-input" type="number" id="places" name="places" th:field="*{places}" placeholder="0" required>
+				        </div>
+				    	<div>
+					        <div uk-form-custom="target: true">
+					        	<label class="uk-form-label" for="picture">Image <span uk-icon="icon: cloud-upload"></span></label>
+					            <input type="file" name="picture" id="picture">
+					            <input class="uk-input uk-form-width-large" type="text" placeholder="Sélectionnez un fichier" disabled>
+					        </div>
+					    </div>
+					</div>
+					<div class="uk-child-width-1-2@s" uk-grid>
+						<div>
+				    		<label class="uk-form-label" for="title">Date *</label>
+				            <input class="uk-input" type="date" id="date" name="date" required>
+				        </div>
+				        <div>
+				    		<label class="uk-form-label" for="time">Heure *</label>
+				            <input class="uk-input" type="time" id="time" name="time" required>
+				        </div>
+					</div>
+				    <div class="uk-margin-medium">
+				    	<label class="uk-form-label" for="description">Description *</label>
+			            <textarea class="uk-textarea" rows="8" id="description" th:field="*{description}" placeholder="Description de la représentation" required></textarea>
+			        </div>
+			        <button class="uk-button uk-align-right uk-button-default">Envoyer</button>
+			    </fieldset>
+			</form>
+		</div>
+	</section>
+	
+	<div th:replace="fragment/layout.html :: script"></div>
+	
+</body>
+
+</html>

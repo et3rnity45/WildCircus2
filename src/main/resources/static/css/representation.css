@@ -1,0 +1,27 @@
+.uk-card-footer {
+	width: 50%;
+	position: absolute;
+	bottom: 0;
+	border-top: solid 1px #E0A526;
+}
+
+.uk-label {
+	background-color: #E0A526 !important;
+	color: #000 !important;
+}
+
+.uk-align-left {
+	margin-bottom: 0 !important;
+}
+
+.uk-modal-title, .uk-table {
+	color: #fff;
+}
+
+.uk-modal-header {
+	border-bottom: solid 1px #E0A526;
+}
+
+.uk-card {
+	background-color: #1C1C1C;
+}

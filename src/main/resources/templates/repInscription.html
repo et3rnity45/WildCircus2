@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+
+<head>
+	<head th:replace="fragment/layout.html :: head"></head>
+	<title>Wild Circus | Réservation</title>
+	<link rel="stylesheet" href="/css/repInscription.css"><link>
+</head>
+
+	<header th:replace="fragment/layout.html :: top"></header>
+	
+	<section class="secGalery uk-section uk-section-secondary">
+		<div class="uk-container">
+			<h1>Réserver sa place</h1>
+			<p>Inscription à la représentation : <span class="uk-text-muted" th:text="${representation.title}"></span></p>
+			<form class="uk-form-stacked" method="post" th:action="@{|/representation/${representation.id}/inscription|}" th:object="${reservation}">
+				<fieldset class="uk-fieldset">
+			    	<div class="uk-margin uk-child-width-1-2@s" uk-grid>
+			    		<div>
+			    			<label class="uk-form-label" for="fullname">Nom complet</label>
+			            	<input class="uk-input" type="text" id="fullname" name="fullname" th:field="*{fullname}" placeholder="Sylvain Blondeau" required>
+			            	<span class="uk-alert-warning" uk-alert th:if="${#fields.hasErrors('fullname')}" th:errors="*{fullname}"></span>
+			    		</div>
+			    		<div>
+			    			<label class="uk-form-label" for="email">Email</label>
+			            	<input class="uk-input" type="text" id="email" name="email" th:field="*{email}" placeholder="exemple@gmail.com" required>
+			            	<span class="uk-alert-warning" uk-alert th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+			    		</div>
+			        </div>
+			        <div class="uk-margin uk-child-width-1-4@s" uk-grid>
+			        	<div>
+			        		<label class="uk-form-label" for="childPlaces">Places Enfants</label>
+					        <input class="uk-input" type="number" id="childPlaces" name="childPlaces" th:field="*{childPlaces}" value="0">
+					        <span class="uk-alert-warning" uk-alert th:if="${#fields.hasErrors('childPlaces')}" th:errors="*{childPlaces}"></span>
+					    </div>
+					    <div>
+					    	<label class="uk-form-label" for="adultPlaces">Places Adultes</label>
+					        <input class="uk-input" type="number" id="adultPlaces" name="adultPlaces" th:field="*{adultPlaces}" value="0">
+					        <span class="uk-alert-warning" uk-alert th:if="${#fields.hasErrors('adultPlaces')}" th:errors="*{adultPlaces}"></span>
+					    </div>
+					    <div>
+					    	<label class="uk-form-label" for="etudiantPlaces">Places Etudiants</label>
+					        <input class="uk-input" type="number" id="etudiantPlaces" name="etudiantPlaces" th:field="*{etudiantPlaces}" value="0">
+					        <span class="uk-alert-warning" uk-alert th:if="${#fields.hasErrors('etudiantPlaces')}" th:errors="*{etudiantPlaces}"></span>
+					    </div>
+					    <div>
+					    	<label class="uk-form-label" for="schoolPlaces">Places Ecole</label>
+					        <input class="uk-input" type="number" id="schoolPlaces" name="schoolPlaces" th:field="*{schoolPlaces}" value="0">
+					        <span class="uk-alert-warning" uk-alert th:if="${#fields.hasErrors('schoolPlaces')}" th:errors="*{schoolPlaces}"></span>
+					    </div>
+			        </div>
+			        <button class="uk-button uk-button-default">Réserver</button>
+			    </fieldset>
+			</form>
+		</div>
+	</section>
+	
+	<footer th:replace="fragment/layout.html :: bottom"></footer>
+	
+	<div th:replace="fragment/layout.html :: toasts"></div>
+
+	<div th:replace="fragment/layout.html :: script"></div>
+
+</body>
+
+</html>

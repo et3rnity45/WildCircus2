@@ -18,8 +18,6 @@ public class Presentation {
 	private String picturePath;
 	
 	public Presentation() {}
-	
-	
 
 	public Presentation(Integer id, String title, String content, String picturePath) {
 		this.id = id;
@@ -27,8 +25,6 @@ public class Presentation {
 		this.content = content;
 		this.picturePath = picturePath;
 	}
-
-
 
 	public Integer getId() {
 		return id;

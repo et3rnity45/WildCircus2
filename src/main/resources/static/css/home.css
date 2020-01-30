@@ -1,6 +1,7 @@
 .secFirst {
 	height: 95vh;
-	background-image: url("/img/backgrounds/circus-edited.jpg");
+	background-image: url("/img/backgrounds/circus.jpg");
+	border-bottom: solid 1px #E0A526;
 }
 
 .img-accueil {
@@ -25,6 +26,10 @@ hr {
 	background-image: url("/img/backgrounds/circus-bg.jpg")
 }
 
+fieldset {
+	border: none;
+}
+
 .formButton {
 	background-color: rgba(0,0,0,0.8);
 	padding: 30px;
@@ -38,10 +43,19 @@ hr {
 
 button {
 	background-color: #E0A526;
+	color: #fff !important;
+}
+
+textarea {
+	background-color: #222;
 }
 
 button:hover {
 	background-color: #E0A526;
+}
+
+.uk-alert-warning {
+	background-color: transparent;
 }
 
 @media only screen and (max-width: 1000px) {

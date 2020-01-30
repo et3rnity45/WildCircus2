@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+
+<head th:fragment="head">
+	<!-- Metas -->
+    <meta charset="UTF-8">
+    <meta content="Site du Wild Circus" name="description">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+	<link rel="icon" href="/img/logo/WildCircus.png">
+	<title>Wild Circus | Administration</title>
+	<!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap"> 
+    <!-- Animate & AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <!-- UIkit -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.7/dist/css/uikit.min.css" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/adminlayout.css">
+</head>
+
+<body>
+	<!-- Sidebar -->
+	<div th:fragment="sidebar">
+		<div class="uk-flex uk-flex-center">
+			<a class="uk-icon-button" uk-icon="menu" uk-toggle="target: #offcanvas-slide"></a>
+		</div>
+		
+		<div id="offcanvas-slide" uk-offcanvas="mode: slide; overlay: true">
+		    <div class="uk-offcanvas-bar">
+	            <button class="uk-offcanvas-close" type="button" uk-close></button>
+	            <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
+	                <li class="uk-text-center" style="padding: 0 0 25px 0;">
+	                    <a href="/"><img src="/img/logo/WildCircus.png" alt="Logo Wild Circus" width="64"></a>
+	                </li>
+	                <li>
+	                    <hr>
+	                </li>
+	                <li class="uk-text-center">
+	                    <h3>Administration</h3>
+	                </li>
+	                <li class="uk-active link-nav"><a href="/">RETOUR AU SITE</a></li>
+	                <li><a class="link-nav" href="/admin/presentation">Paragraphes</a></li>
+	                <li><a class="link-nav" href="/admin/galery">Galerie</a></li>
+	                <li><a class="link-nav" href="/admin/representation">Représentations</a></li>
+	                <li><a class="link-nav" href="/admin/reservation">Réservations</a></li>
+	                <li><a class="link-nav" href="/admin/message">Messages</a></li>
+	            </ul>
+	        </div>
+		</div>
+	</div>
+	
+</body>
+
+</html>

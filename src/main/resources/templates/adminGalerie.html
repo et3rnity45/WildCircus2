@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+
+<head>
+	<head th:replace="fragment/adminlayout.html :: head"></head>
+</head>
+
+<body>
+
+	<div th:replace="fragment/adminlayout.html :: sidebar"></div>
+	
+	<section class="uk-section uk-section-secondary">
+		<div class="uk-container uk-container-large">
+			<div>
+				<h1>Gestion des Images</h1>
+				<a href="/admin/galery/update"><span uk-icon="icon: plus"></span> Ajouter des images</a>
+			</div>
+			<hr class="uk-divider-icon uk-margin-medium">
+			<div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@l uk-grid uk-flex-top uk-flex-wrap-top" uk-grid="masonry: true">
+				<div class="uk-inline" th:each="picture : ${pictures}">
+					<img th:src="${picture.picturePath}" th:alt="${picture.title}"/>
+					<div class="uk-position-top-right">
+		                <a th:href="@{|/admin/galery/delete${picture.id}|}" class="uk-padding-small" uk-icon="icon : trash" onclick="return confirm('Supprimer cette photo ?')"></a>
+		            </div>
+            	</div>
+			</div>
+		</div>
+	</section>
+	
+	<div th:replace="fragment/layout.html :: script"></div>
+	
+</body>
+
+</html>
