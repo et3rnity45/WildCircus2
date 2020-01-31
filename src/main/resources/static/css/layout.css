@@ -86,12 +86,3 @@ h6, .uk-h6 {font-size: @base-h6-font-size;}
 	-webkit-transform: scaleX(1);
 	transform: scaleX(1);
 }
-
-/*** TOASTS ***/
-
-.alerts {
-	margin: 10px;
-	position: fixed;
-	top: 80px;
-	right: 0;
-}

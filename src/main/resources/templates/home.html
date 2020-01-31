@@ -12,7 +12,7 @@
 	<header th:replace="fragment/layout.html :: top"></header>
 
 	<section class="secFirst uk-background-image uk-background-cover uk-background-muted uk-flex uk-flex-center uk-flex-middle uk-overflow-hidden">
-    	<h1 class="uk-h1 uk-heading-large">Bienvenue au Wild Circus</h1>
+    	<h1 class="uk-h1 uk-heading-large" uk-scrollspy="cls: uk-animation-scale-up;">Bienvenue au Wild Circus</h1>
 	</section>
 	
 	<section id="secPresentation" class="secPresentation uk-section uk-section-secondary">
@@ -20,7 +20,7 @@
 			<div class="uk-flex uk-flex-center uk-margin-large">
 				<h2 class="uk-h2 uk-heading-small">Venez découvrir notre spectale</h2>
 			</div>
-			<div class="uk-margin-large" uk-grid>
+			<div class="uk-margin-large" uk-scrollspy="cls: uk-animation-slide-right;" uk-grid>
 				<div class="uk-width-expand">
 					<h3 th:text="${presentations[0].title}">Titre 1</h3>
 					<hr/>
@@ -30,7 +30,7 @@
 					<img class="img-accueil" th:src="${presentations[0].picturePath}" th:alt="|Visuel ${presentations[0].title}|" uk-img/>
 				</div>
 			</div>
-			<div class="uk-margin-large" uk-grid>
+			<div class="uk-margin-large" uk-scrollspy="cls: uk-animation-slide-left;" uk-grid>
 				<div>
 					<img class="img-accueil" th:src="${presentations[1].picturePath}" th:alt="|Visuel ${presentations[1].title}|" uk-img/>
 				</div>
@@ -40,7 +40,7 @@
 					<p class="uk-margin-medium-top" th:text="${presentations[1].content}">Lorem ipsum dolor sit amet</p>
 				</div>
 			</div>
-			<div class="uk-margin-large" uk-grid>
+			<div class="uk-margin-large" uk-scrollspy="cls: uk-animation-slide-right;" uk-grid>
 				<div class="uk-width-expand">
 					<h3 th:text="${presentations[2].title}">Titre 3</h3>
 					<hr/>
@@ -55,7 +55,7 @@
 	
 	<section id="secContact" class="secContact uk-section uk-section-secondary uk-background-image uk-background-fixed uk-background-cover uk-background-muted uk-overflow-hidden">
 		<div class="uk-container uk-container-small uk-margin-large-top">
-			<div class="formButton">
+			<div class="formButton" uk-scrollspy="cls: uk-animation-fade;">
 				<form id="contact" method="post" th:action="@{/#secContact}" th:object="${message}">
 					<fieldset>
 						<legend class="uk-legend">Nous Contacter</legend>
@@ -84,8 +84,6 @@
 	</section>
 
 	<footer th:replace="fragment/layout.html :: bottom"></footer>
-
-	<div th:replace="fragment/layout.html :: toasts"></div>
 	
 	<div th:replace="fragment/layout.html :: script"></div>
 

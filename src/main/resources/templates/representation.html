@@ -11,6 +11,8 @@
 	
 	<section class="uk-section uk-section-secondary">
 		<div class="uk-container uk-container-large">
+			<h1>Les photos de la troupe</h1>
+			<hr class="uk-divider-icon uk-margin-medium">
 			<a class="uk-button uk-button-default" href="#modal-center" uk-toggle>Grille des Tarifs</a>
 			<div class="uk-align-center" uk-filter="target: .js-filter">
 			    <div class="uk-grid-small uk-grid-divider uk-flex-middle" uk-grid>
@@ -55,7 +57,7 @@
 	<!-- Modale Tarifs -->
 	<div id="modal-center" class="uk-flex-top" uk-modal>
 	    <div class="uk-modal-dialog uk-margin-auto-vertical">
-	    	<button class="uk-modal-close-secondary" type="button" uk-close></button>
+	    	<button class="uk-modal-close-default" type="button" uk-close></button>
 	        <div class="uk-modal-header uk-background-secondary">
 	            <h2 class="uk-modal-title">Nos Tarifs</h2>
 	        </div>
@@ -73,17 +75,17 @@
 				    <tbody>
 				        <tr>
 				            <td>Lundi au Vendredi</td>
-				            <td>20</td>
-				            <td>35</td>
-				            <td>25</td>
-				            <td>15</td>
+				            <td>20€</td>
+				            <td>35€</td>
+				            <td>25€</td>
+				            <td>15€</td>
 				        </tr>
 				        <tr>
 				            <td>Week-end</td>
-				            <td>25</td>
-				            <td>40</td>
-				            <td>30</td>
-				            <td>15</td>
+				            <td>25€</td>
+				            <td>40€</td>
+				            <td>30€</td>
+				            <td>15€</td>
 				        </tr>
 				    </tbody>
 				</table>
@@ -92,8 +94,6 @@
 	</div>
 	
 	<footer th:replace="fragment/layout.html :: bottom"></footer>
-	
-	<div th:replace="fragment/layout.html :: toasts"></div>
 
 	<div th:replace="fragment/layout.html :: script"></div>
 

@@ -43,6 +43,9 @@
 	                </ul>
 	            </div>
 	        </div>
+	        <div class="uk-navbar-right uk-margin-right">
+	        	<a href="/admin" uk-icon="icon: user"></a>
+	        </div>
 	    </nav>
 	    <div id="mobile-navbar" uk-offcanvas="mode: slide; flip: false">
 	        <div class="uk-offcanvas-bar">
@@ -67,31 +70,36 @@
 	    </div>
 	</header>
 	
-	
-	<!-- Toasts -->
-	<div class="alerts" th:fragment="toasts" th:if="${successMessage} or ${errorMessage}">
-		<div class="uk-alert-success" uk-alert th:if="${successMessage}">
-		    <a class="uk-alert-close" uk-close></a>
-		    <p th:text="${successMessage}">Message de succès</p>
-		</div>
-		
-		<div class="uk-alert-warning" uk-alert th:if="${errorMessage}">
-		    <a class="uk-alert-close" uk-close></a>
-		    <p th:text="${errorMessage}">Message d'erreur</p>
-		</div>
-	</div>
-	
-	
 	<!-- Footer -->
-	<footer th:fragment="bottom">
+	<footer class="uk-padding uk-flex uk-flex-center" th:fragment="bottom">
+		<div>
+			<a href="" class="uk-icon-button uk-margin-small-right" uk-icon="twitter"></a>
+			<a href="" class="uk-icon-button uk-margin-small-right" uk-icon="facebook"></a>
+			<a href="" class="uk-icon-button uk-margin-small-right"uk-icon="youtube"></a>
+		</div>
 	</footer>
 	
-	
-	<!-- Scriptsx -->
+	<!-- Scripts -->
 	<div th:fragment="script">
 		<script src="https://cdn.jsdelivr.net/npm/uikit@3.2.7/dist/js/uikit.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/uikit@3.2.7/dist/js/uikit-icons.min.js"></script>
 		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script th:if="${successMessage}">
+			/*<![CDATA[*/
+				var messagee = '[[${successMessage}]]';
+				window.onload = function() {
+					UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> ' + messagee, pos: 'top-right', status: 'success'});
+				};
+			/*]]>*/
+		</script>
+		<script th:if="${errorMessage}">
+			/*<![CDATA[*/
+				var messagee = '[[${errorMessage}]]';
+				window.onload = function() {
+					UIkit.notification({message: '<span uk-icon=\'icon: ban\'></span> ' + messagee, pos: 'top-right', status: 'danger'});
+				};
+			/*]]>*/
+		</script>
     	<script>
 			AOS.init({
 		    	once: true
